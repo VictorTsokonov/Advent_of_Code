@@ -54,21 +54,10 @@ public class Part2 {
                         };
                     }
                 }
-//                places1.put(x + "" + y, places1.getOrDefault(x + "" + y, 0) + 1);
-//                places1.put(x2 + "" + y2, places1.getOrDefault(x2 + "" + y2, 0) + 1);
-
             }
-
             System.out.println(places1.keySet().size());
         }catch (FileNotFoundException e){
             throw new FileNotFoundException();
         }
-    }
-    public static int hash(int x, int y) {
-        final int prime = 31; // A prime number used for hashing
-        int result = 1;
-        result = prime * result + x;
-        result = prime * result + y;
-        return result;
     }
 }
