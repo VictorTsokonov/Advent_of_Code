@@ -1,0 +1,15 @@
+# Ignore everything
+
+
+# But don't ignore .gitkeep files or .java files
+!*.gitkeep
+!*.java
+!*.txt
+!*/2016
+
+# Ignore all files inside the out directory
+out/
+
+# Ignore IntelliJ IDEA project files
+*.iml
+.idea/
