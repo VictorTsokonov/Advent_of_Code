@@ -1,5 +1,4 @@
-# Ignore everything
-
+.DS_Store
 
 # But don't ignore .gitkeep files or .java files
 !*.gitkeep
