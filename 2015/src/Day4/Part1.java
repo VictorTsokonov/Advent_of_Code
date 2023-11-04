@@ -19,8 +19,6 @@ public class Part1 {
             md.update(input.getBytes());
             byte[] digest = md.digest();
             char[] hash = Hex.encodeHex(digest);
-
-
             StringBuilder hexString = new StringBuilder();
             for (byte b : digest) {
                 String hex = Integer.toHexString(0xff & b);
@@ -38,7 +36,5 @@ public class Part1 {
             System.out.println(message + " " + ans);
             ans++;
         }
-
-
     }
 }
