@@ -2,17 +2,14 @@ package Day6;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Part1 {
+public class Part2 {
 
     public static void main(String[] args) {
         int ans = 0;
         int[][] grid = new int[1000][1000];
-        for(int[] splitGrid : grid){
-            Arrays.fill(splitGrid, -1);
-        }
+
         try {
             Scanner scanner = new Scanner(new File("./2015/src/Day6/input.txt"));
             while (scanner.hasNext()) {
@@ -49,14 +46,14 @@ public class Part1 {
                 }
             }
 
-            for (int i = 0; i < 1000; i++) {
-                for (int i1 = 0; i1 < 1000; i1++) {
-                    if(grid[i][i1] == 1)ans++;
+            for (int x = 0; x < 1000; x++) {
+                for (int y = 0; y < 1000; y++) {
+                    ans += grid[x][y];
                 }
             }
 
             System.out.println(ans);
-            } catch (FileNotFoundException ex) {
+        } catch (FileNotFoundException ex) {
             throw new RuntimeException(ex);
         }
     }
@@ -65,13 +62,13 @@ public class Part1 {
             for(int y = y1; y <= y2; y++){
                 switch (command){
                     case "on" -> {
-                        grid[x][y] = 1;
+                        grid[x][y] += 1;
                     }
                     case "off" ->{
-                        grid[x][y] = -1;
+                        if((grid[x][y] - 1) >= 0)grid[x][y] -= 1;
                     }
                     case "toggle" -> {
-                        grid[x][y] = grid[x][y] * -1;
+                        grid[x][y] += 2;
                     }
                 }
             }
