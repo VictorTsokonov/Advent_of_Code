@@ -5,7 +5,7 @@
 !*.java
 !*.txt
 !*/2016
-
+lib
 # Ignore all files inside the out directory
 out/
 
